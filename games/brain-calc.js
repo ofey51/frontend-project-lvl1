@@ -13,8 +13,8 @@ const brainCulc = () => {
     const num2 = numGenerator();
     const operator = operators[Math.floor(Math.random() * 3)];
     const question = `${num1} ${operator} ${num2}`;
-    let trueAnswer = undefined;
-    
+    let trueAnswer;
+
     if (operator === '+') {
       trueAnswer = num1 + num2;
     } else if (operator === '-') {
@@ -24,7 +24,7 @@ const brainCulc = () => {
     }
 
     trueAnswer = trueAnswer.toString();
-    
+
     if (answer(question, trueAnswer, userName)) {
       correctAnswers += 1;
     } else break;
