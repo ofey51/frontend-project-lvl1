@@ -4,3 +4,6 @@
 <h2>Brain-even</h2>
 <hr>
 <a href="https://asciinema.org/a/hCkc9wfoWd8mUBtaL0saOoyV8" target="_blank"><img src="https://asciinema.org/a/hCkc9wfoWd8mUBtaL0saOoyV8.svg" /></a>
+<h2>Brain-calc</h2>
+<hr>
+<a href="https://asciinema.org/a/uUL5i5OAmOoXVxmzbsJ2DvUar" target="_blank"><img src="https://asciinema.org/a/uUL5i5OAmOoXVxmzbsJ2DvUar.svg" /></a>
