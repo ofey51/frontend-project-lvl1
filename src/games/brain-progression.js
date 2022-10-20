@@ -1,33 +1,23 @@
-import { greeting, answer } from '../index.js';
+import { numGenerator } from '../utils.js';
 
 const brainProgression = () => {
-  const userName = greeting();
-  console.log('What number is missing in the progression?');
+  const rules = 'What number is missing in the progression?';
+  const round = () => {
+    const progressionLength = 10;
+    const commonDifference = numGenerator(1, 5);
+    const firstElement = numGenerator(0, 15);
+    const progression = [firstElement];
+    const hiddenElement = numGenerator(0, progressionLength - 1);
 
-  let correctAnswers = 0;
-  const numGenerator = (n) => Math.floor(Math.random() * n);
-  const arrayLength = 10;
-
-  while (correctAnswers < 3) {
-    const firstElement = numGenerator(15);
-    const array = [firstElement];
-    const commonDifference = 1 + numGenerator(5);
-    const hiddenElement = numGenerator(arrayLength - 1);
-
-    for (let i = 1; i < arrayLength; i += 1) {
-      array.push(array[i - 1] + commonDifference);
+    for (let i = 1; i < progressionLength; i += 1) {
+      progression.push(progression[i - 1] + commonDifference);
     }
-    const trueAnswer = String(array[hiddenElement]);
-    array[hiddenElement] = '..';
-    const question = array.join(' ');
-    if (answer(question, trueAnswer, userName)) {
-      correctAnswers += 1;
-    } else break;
-  }
-
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+    const trueAnswer = String(progression[hiddenElement]);
+    progression[hiddenElement] = '..';
+    const question = progression.join(' ');
+    return [question, trueAnswer];
+  };
+  return [rules, round()];
 };
 
 export default brainProgression;

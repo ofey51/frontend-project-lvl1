@@ -1,14 +1,9 @@
-import { greeting, answer } from '../index.js';
+import { numGenerator } from '../utils.js';
 
 const brainPrime = () => {
-  const userName = greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  let correctAnswers = 0;
-  const numGenerator = () => Math.floor(Math.random() * 101);
-
-  while (correctAnswers < 3) {
-    const number = numGenerator();
+  rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const round = () => {
+    const number = numGenerator(0, 100);
     let trueAnswer = true;
     for (let i = 2; i <= Math.sqrt(number); i += 1) {
       if (number % i === 0) {
@@ -16,15 +11,11 @@ const brainPrime = () => {
         break;
       }
     }
-    trueAnswer = trueAnswer === true ? 'yes' : 'no';
+    trueAnswer = trueAnswer ? 'yes' : 'no';
     const question = number;
-    if (answer(question, trueAnswer, userName)) {
-      correctAnswers += 1;
-    } else break;
-  }
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+    return [question, trueAnswer];
+  };
+  return [rules, round()];
 };
 
 export default brainPrime;
