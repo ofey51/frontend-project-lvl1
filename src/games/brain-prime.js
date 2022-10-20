@@ -1,12 +1,12 @@
 import { numGenerator } from '../utils.js';
 
 const brainPrime = () => {
-  rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const round = () => {
-    const number = numGenerator(0, 100);
+    const number = numGenerator(1, 100);
     let trueAnswer = true;
     for (let i = 2; i <= Math.sqrt(number); i += 1) {
-      if (number % i === 0) {
+      if (number % i === 0 || number === 1) {
         trueAnswer = false;
         break;
       }
