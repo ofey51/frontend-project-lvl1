@@ -1,10 +1,9 @@
 import readlineSync from 'readline-sync';
 import getUserName from '../bin/cli.js';
 
-const greeting = () => {
+const greet = () => {
   console.log('Welcome to the Brain Games!');
-  const userName = getUserName();
-  return userName;
+  return getUserName();
 };
 
 const answer = (question, trueAnswer, userName) => {
@@ -17,4 +16,24 @@ const answer = (question, trueAnswer, userName) => {
   return false;
 };
 
-export { greeting, answer };
+const game = (gameRules) => {
+  let correctAnswers = 0;
+  const rounds = 3;
+  const player = greet();
+  const [rules] = gameRules();
+  console.log(rules);
+
+  while (correctAnswers < rounds) {
+    const [, [question, trueAnswer]] = gameRules();
+    if (answer(question, trueAnswer, player)) {
+      correctAnswers += 1;
+    } else {
+      break;
+    }
+  }
+  if (correctAnswers === 3) {
+    console.log(`Congratulations, ${player}!`);
+  }
+};
+
+export { game };
