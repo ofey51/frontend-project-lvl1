@@ -1,4 +1,4 @@
-import { greeting, answer } from '../src/index.js';
+import { greeting, answer } from '../index.js';
 
 const brainGcd = () => {
   const userName = greeting();

@@ -1,4 +1,3 @@
-/* В этом файле необходимо описать логику для всех игр */
 import readlineSync from 'readline-sync';
 import getUserName from '../bin/cli.js';
 
