@@ -13,8 +13,8 @@ const brainGcd = () => {
     const num1 = random(0, 50);
     const num2 = random(0, 50);
     const question = `${num1} ${num2}`;
-    const trueAnswer = String(findGcd(num2, num1));
-    return [question, trueAnswer];
+    const answer = String(findGcd(num2, num1));
+    return [question, answer];
   };
   return [rules, round];
 };

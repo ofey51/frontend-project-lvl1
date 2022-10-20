@@ -8,22 +8,22 @@ const brainCulc = () => {
     const num2 = random(0, 15);
     const operator = operators[random(0, 1)];
     const question = `${num1} ${operator} ${num2}`;
-    let trueAnswer;
+    let answer;
     switch (operator) {
       case '+':
-        trueAnswer = String(num1 + num2);
+        answer = String(num1 + num2);
         break;
       case '-':
-        trueAnswer = String(num1 - num2);
+        answer = String(num1 - num2);
         break;
       case '*':
-        trueAnswer = String(num1 * num2);
+        answer = String(num1 * num2);
         break;
       default:
-        trueAnswer = null;
+        answer = null;
         break;
     }
-    return [question, trueAnswer];
+    return [question, answer];
   };
   return [rules, round];
 };

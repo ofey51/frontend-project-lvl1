@@ -12,10 +12,10 @@ const brainProgression = () => {
     for (let i = 1; i < progressionLength; i += 1) {
       progression.push(progression[i - 1] + commonDifference);
     }
-    const trueAnswer = String(progression[hiddenElement]);
+    const answer = String(progression[hiddenElement]);
     progression[hiddenElement] = '..';
     const question = progression.join(' ');
-    return [question, trueAnswer];
+    return [question, answer];
   };
   return [rules, round];
 };
