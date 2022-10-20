@@ -7,7 +7,7 @@ const brainEven = () => {
     const answer = (question % 2 === 0) ? 'yes' : 'no';
     return [question, answer];
   };
-  return [rules, round()];
+  return [rules, round];
 };
 
 export default brainEven;
