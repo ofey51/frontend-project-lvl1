@@ -1,4 +1,4 @@
-import { getUserName, getUserAnswer } from '../bin/cli.js';
+import { getUserName, getUserAnswer } from './cli.js';
 
 const runGame = (game) => {
   let correctAnswers = 0;
